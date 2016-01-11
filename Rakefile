@@ -4,14 +4,9 @@ begin
   require 'yaml'
   require 'ssl_checker'
   require 'rspec/core/rake_task'
-  require 'ruby-lint/rake_task'
   require 'rubocop/rake_task'
   RSpec::Core::RakeTask.new(:spec)
   RuboCop::RakeTask.new
-  RubyLint::RakeTask.new do |task|
-    task.name = 'lint'
-    task.files = ['lib/ssl_checker']
-  end
 rescue LoadError => e
   puts e
 end

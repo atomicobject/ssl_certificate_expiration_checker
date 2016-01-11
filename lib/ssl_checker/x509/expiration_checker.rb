@@ -1,6 +1,7 @@
 require 'openssl'
 
 module SSLChecker
+  # Utility for parsing X509 certificates
   module X509
     # Checks if a X509 certificate is expired
     class ExpirationChecker

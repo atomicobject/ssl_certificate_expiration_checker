@@ -3,6 +3,7 @@ require 'openssl'
 require 'logger'
 
 module SSLChecker
+  # Utility for parsing X509 certificates
   module X509
     # Retrieves a x509 certificate
     class Retriever
