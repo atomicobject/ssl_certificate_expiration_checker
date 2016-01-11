@@ -1,0 +1,9 @@
+---
+- host: atomicobject.com
+  comment: "primary site"
+  port: 443
+  snitch: aabbccddee
+- host: expired.atomicobject.com
+  comment: "secondary site"
+  port: 443
+  snitch: aabbccddff
