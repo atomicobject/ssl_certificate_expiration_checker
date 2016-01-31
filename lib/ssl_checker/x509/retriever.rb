@@ -3,7 +3,6 @@ require 'openssl'
 require 'logger'
 
 module SSLChecker
-  # Utility for parsing X509 certificates
   module X509
     # Retrieves a x509 certificate
     class Retriever
@@ -22,6 +21,7 @@ module SSLChecker
         tcp_socket = TCPSocket.new(host, port)
         @logger.debug("Opening SSLSocket to #{host}:#{port}")
         ssl_socket = OpenSSL::SSL::SSLSocket.new(tcp_socket)
+        ssl_socket.hostname=host
         ssl_socket.connect
         cert = ssl_socket.peer_cert
         @logger.debug("Got peer_cert:\n#{cert}")
